@@ -2,12 +2,17 @@ package com.example.calculadora
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import net.objecthunter.exp4j.ExpressionBuilder
+import java.util.Locale
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(){
+
+    private lateinit var textToSpeech: TextToSpeech
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -152,6 +157,9 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+
+
 }
 
 
