@@ -2,20 +2,27 @@ package com.example.calculadora
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import net.objecthunter.exp4j.ExpressionBuilder
-import java.util.Locale
+
 
 class MainActivity : AppCompatActivity(){
 
-    private lateinit var textToSpeech: TextToSpeech
+
+    //lembre se
+// coloca a logica em outra pasta ,,pro codigo ficar mais limpo.
+
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+// numeros
 
         val um: TextView = findViewById(R.id.um)
         val dois: TextView = findViewById(R.id.dois)
@@ -28,7 +35,7 @@ class MainActivity : AppCompatActivity(){
         val nove: TextView = findViewById(R.id.nove)
         val zero: TextView = findViewById(R.id.zero)
         val zero_d:TextView= findViewById(R.id.dois_zeros)
-
+// sinais
         val adicao: TextView = findViewById(R.id.adicao)
         val multiplicacao: TextView = findViewById(R.id.multiplicacao)
         val divisao: TextView = findViewById(R.id.divisao)
@@ -36,6 +43,8 @@ class MainActivity : AppCompatActivity(){
         val igual: TextView = findViewById(R.id.igual)
         val porcentagem: TextView = findViewById(R.id.porcentagem)
 
+
+        // textVIew
         val ponto:TextView= findViewById(R.id.ponto)
 
         val clear:ImageView= findViewById(R.id.apaga)
@@ -46,6 +55,7 @@ class MainActivity : AppCompatActivity(){
 
 
 
+// avalia a expressao ,,
 
         igual.setOnClickListener {
             try {
@@ -63,6 +73,7 @@ class MainActivity : AppCompatActivity(){
             }
         }
 
+        // funcionalidades de limpeza em uma calculadora
 
         clear_all.setOnClickListener{
             expression.text=""
@@ -77,6 +88,7 @@ class MainActivity : AppCompatActivity(){
         }
 
 
+        // porcentagens
         fun appendenExpression(string: String, canClear: Boolean) {
 
             if(result.text.isNotEmpty()){
@@ -99,6 +111,7 @@ class MainActivity : AppCompatActivity(){
 
 
 
+        // clique dos botoes
 
         um.setOnClickListener {
             appendenExpression("1", true)
