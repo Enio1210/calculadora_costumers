@@ -6,7 +6,7 @@ Ainda quero aplica um tema dark, mais eu quero colocar um dark ainda no tema poe
 
 ## :camera_flash: Screenshots
 <!-- You can add ore screenshots here if you like -->
-<img src="/app/result/img1.png" width="260"/>
+<img src="/result/img1.png" width="260">
 
 ## Tecnologias
 * Kotlin
